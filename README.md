@@ -2,7 +2,7 @@
 
 # Getting started
 
-This project runs with Ruby 2.7.2 and Rails 6.1.1
+This project runs with Ruby 2.7.2 and Rails 6.1.4.1
 
 To install Ruby please check https://www.ruby-lang.org/en/documentation/installation/
 
