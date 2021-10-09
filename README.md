@@ -32,3 +32,5 @@ To run the test suite type in the command line ```rspec ./spec```. It will retur
 ## The challenge
 
 We want a Front-end + Backend application that allows you to post and visualize metrics. Each metric will have a Timestamp, name, and value. The metrics will be shown in a timeline and must show averages per minute/hour/day. The metrics will be persisted in the database.
+
+You can find the Front-end app in https://github.com/edgarbarrero/metrics-frontend
