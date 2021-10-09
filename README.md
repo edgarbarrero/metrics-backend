@@ -1,24 +1,34 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Getting started
 
-Things you may want to cover:
+This project runs with Ruby 2.7.2 and Rails 6.1.1
 
-* Ruby version
+To install Ruby please check https://www.ruby-lang.org/en/documentation/installation/
 
-* System dependencies
+Then run ```bundle install```
 
-* Configuration
+Run ```'rails db:prepare'``` to create and migrate de database
 
-* Database creation
+If you want to populate your database with dummy data run ```rails db:seed```
+As still there are no validations for models, please avoid run seeds twice.
 
-* Database initialization
 
-* How to run the test suite
+# API Usage
 
-* Services (job queues, cache servers, search engines, etc.)
+There is a JSON API-compliant for requesting metrics at the endpoint ```/api/v1/mertics```
+Params:
+A param group_by is needed to aggregate metrics. Values permitted are "day", "hour", "minute"
+To use the endpoint in your local machine, start the server: ```rails s```
 
-* Deployment instructions
+Test with curl: in your command line type ```curl --request GET 'http://localhost:3000/api/v1/metrics?group_by=day'``` it should return something similar (depending on your data) to ```{"2021-10-08 00:00":"10.0","2021-10-09 00:00":"10.0"}%```
 
-* ...
+Test in browser: in your browser go to http://localhost:3000/api/v1/metrics?group_by=day, it should return the same than testing in command line.
+
+# Tests
+
+To run the test suite type in the command line ```rspec ./spec```. It will return the number of examples and the failures: ```5 examples, 0 failures```
+
+## The challenge
+
+We want a Front-end + Backend application that allows you to post and visualize metrics. Each metric will have a Timestamp, name, and value. The metrics will be shown in a timeline and must show averages per minute/hour/day. The metrics will be persisted in the database.
